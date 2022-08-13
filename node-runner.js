@@ -24,7 +24,7 @@ server.routes["/"] = function(req)
 {
   var x = "Content-type: text/html";
   fs.readFile(file, (data) => {
-    data = data.replace(/<server-script>*</server-script>/g, function(s) {
+    data = data.replace(/<server-script>*<\/server-script>/g, function(s) {
       s = s.replace("<server-script>","").replace("</server-script>","");
       eval(s);
     }
