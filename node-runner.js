@@ -1,34 +1,41 @@
-// something like: node-runner index.html
 const http = require('http');
 const fs = require('fs');
 const process = require('process');
 
 var server = {
-  port : 3000,
-  routes : {"/":(req) => {}},
+  port: 3000,
+  routes: { "/": null },
   create: function() {
     http.createServer((req, res) => {
-      if(routes[res.url] == undefined)
-      {
-        res.write("Content-type: text/html");
-        res.write("<code>Cannot GET /" + req.url + "</code>");
+      if (server.routes[req.url] == undefined) {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.write("<code>Cannot GET " + req.url + "</code>");
+        res.end()
+      } else {
+        server.routes[req.url](req, res);
+        res.end();
       }
-      res.write(this.routes[req.url](req));
     }).listen(this.port);
   }
 };
 
 var file = process.argv[1] || "index.html";
 
-server.routes["/"] = function(req)
-{
-  var x = "Content-type: text/html";
-  fs.readFile(file, (data) => {
+server.routes["/"] = (req, res) => {
+  var x = "";
+  res.writeHead(200, { "Content-type": "text/html" })
+  fs.readFile(file, 'utf8', (err, data) => {
+    if (err)
+      return;
     data = data.replace(/<server-script>*<\/server-script>/g, function(s) {
-      s = s.replace("<server-script>","").replace("</server-script>","");
+      s = s.replace("<server-script>", "").replace("</server-script>", "");
       eval(s);
-    }
+    });
+    x = x + data;
   });
+  console.log(x);
+  res.write(x);
 }
 
-  
+server.create();
+
