@@ -1,13 +1,5 @@
-class CustomIframe
+class CustomIframe extends HtmlElement
 {
-  constructor(selector)
-  {
-    this.suppressJS = false;
-    if(selector != undefined)
-      this.element = document.querySelector(selector);
-    else
-      this.element = document.createElement("div");
-  }
   load(src)
   {
     var x = new XMLHttpRequest();
@@ -32,4 +24,14 @@ class CustomIframe
     this.element.style.width = w;
     this.element.style.height = h;
   }
+  connectedCallback() 
+  {
+    const shadow = this.attachShadow({mode: 'open'});
+    this.element = document.createElement("div");
+    shadow.appendChild(this.element);
+    this.resize(500, 400);
+    this.load(this.getAttribute("src") || "about:blank");
+  }
 }
+
+customElements.define('w-frame', CustomIframe);
