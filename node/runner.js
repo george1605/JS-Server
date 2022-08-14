@@ -27,9 +27,7 @@ server.routes["/"] = (req, res) => {
   fs.readFile(file, 'utf8', (err, data) => {
     if (err)
       return;
-    data = data.replace(/<server-script>*<\/server-script>/g, function(s) {
-      s = s.replace("<server-script>", "").replace("</server-script>", "");
-      eval(s);
+      data = data + "<script src='code.js'></script>";
     });
     x = x + data;
   });
