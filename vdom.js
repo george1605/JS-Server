@@ -12,3 +12,11 @@ document.formatVElement = function(elem, args) {
     return args[c++];
   });
 }
+
+document.usesState = function(elem, state) {
+  return elem.vtext.includes("{{" + state + "}}");
+}
+
+document.buildVDom = function() {
+  
+}
