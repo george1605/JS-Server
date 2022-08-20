@@ -5,7 +5,7 @@ bindings for more languages.
 
 <b>Example:</b>
 <br>
-```
+```js
 var state = 0;
 var elem = document.newVElement("p");
 button.onclick = function() {
@@ -13,3 +13,9 @@ button.onclick = function() {
   document.formatVElement(elem, state);
 }
 ```
+<br>
+<b>Features</b>
+* Virtual DOM
+* Custom Iframes
+* Node.js HTML Runner
+* more
