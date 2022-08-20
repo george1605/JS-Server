@@ -3,6 +3,11 @@
   {
    return (count ($_COOKIE) > 0);
   }
+
+  function checkGet($var)
+  {
+   return isset($_GET[$var]);
+  }
   
   class FormData 
   {
