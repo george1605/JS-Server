@@ -15,10 +15,15 @@ button.onclick = function() {
 ```
 <br>
 <b>Features:</b>
-+ Virtual DOM
-+ Custom Iframes
-+ Node.js HTML Runner
-+ more
+<ul>
+ <li>Virtual DOM</li>
+ <li>Custom Iframes</li>
+ <li>Node.js HTML Runner</li>
+ <li>Wrapper for SQL</li>
+ <li>more</li>
+</ul>
+</br>
 
 <b>Tests:</b><br>
-Iframe test - *PASSED*
+Iframe test - *PASSED*<br>
+Canvas test - *PASSED*
