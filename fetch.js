@@ -16,3 +16,15 @@ class Route
     fetch(this.path).then((data)=>{document.write(data);});
   }
 };
+
+function sendGraphQL(data)
+{
+  var n = new XmlHttpRequest(data);
+  var data = "";
+  n.open("GET","/graphql");
+  n.onreadystatechange = () => {
+    if(n.state == 4)
+      data = n.responseText;
+  }
+  return data;
+}
