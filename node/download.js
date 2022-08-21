@@ -2,9 +2,8 @@ const https = require('https');
 
 function download(URL, filename)
 {
+let data = '';
 https.get(URL, (resp) => {
-  let data = '';
-
   // A chunk of data has been received.
   resp.on('data', (chunk) => {
     data += chunk;
@@ -18,4 +17,9 @@ https.get(URL, (resp) => {
 }).on("error", (err) => {
   console.log("Error: " + err.message);
 });
+return data;
 }
+
+module.exports = {
+  get: download 
+};
