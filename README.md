@@ -27,10 +27,10 @@ button.onclick = function() {
 <b>Tests:</b><br>
   Iframe test - *PASSED*<br>
   Canvas test - *PASSED*
-<br>
+<br><br>
 <b>How to install:</b><br>
-Run '''
+Run ```
 liquify get [filename]
-''' or download the source directly from GitHub 
+``` or download the <br>source directly from GitHub.
 The files in the root directory are frontend scripts<br>
 that can be simply included via script tags.
