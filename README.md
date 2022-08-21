@@ -25,5 +25,12 @@ button.onclick = function() {
 </br>
 
 <b>Tests:</b><br>
-Iframe test - *PASSED*<br>
-Canvas test - *PASSED*
+  Iframe test - *PASSED*<br>
+  Canvas test - *PASSED*
+<br>
+<b>How to install:</b><br>
+Run '''
+liquify get [filename]
+''' or download the source directly from GitHub 
+The files in the root directory are frontend scripts<br>
+that can be simply included via script tags.
