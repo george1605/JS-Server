@@ -1,3 +1,5 @@
+<?php
+
 function sqlConnect($servername, $username, $password)
 {
   $conn = new mysqli($servername, $username, $password);
@@ -13,3 +15,5 @@ function sqlSelect($conn, $from = "table", $condition = NULL)
     $query = $init . "WHERE(" . $condition . ")";
   return $conn->query($query);
 }
+
+?>
