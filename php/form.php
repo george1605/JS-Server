@@ -8,6 +8,11 @@
   {
    return isset($_GET[$var]);
   }
+
+  function checkReq($var)
+  {
+    return isset($_REQUEST[$var]);
+  }
   
   class FormData 
   {
