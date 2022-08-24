@@ -24,10 +24,24 @@ class CustomCanvas
    this.ctx.lineTo(getRand(this.width), getRand(this.height));
    this.ctx.stroke();
   }
+  randFill()
+  {
+    var r = getRand(255);
+    var g = getRand(255);
+    var b = getRand(255);
+    var rgb = "rgb(" + r + "," + g + "," + b + ")";
+    this.ctx.fillStyle = rgb;
+    this.ctx.fill();
+  }
   
   gradient(clr1, clr2)
   {
       
+  }
+
+  gl()
+  {
+    return this.getContext("webgl");
   }
   
   data()
