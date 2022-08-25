@@ -28,3 +28,9 @@ function sendGraphQL(data)
   }
   return data;
 }
+
+function replaceTitle(title)
+{
+  var n = document.getElementsByTagName("title")[0];
+  n.innerHTML = title;
+}
