@@ -34,3 +34,10 @@ function replaceTitle(title)
   var n = document.getElementsByTagName("title")[0];
   n.innerHTML = title;
 }
+
+function getPathParam()
+{
+  var uri = new URI(window.location.href);
+  var param = uri.searchParams.get("path");
+  return param;
+}
