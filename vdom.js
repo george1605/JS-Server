@@ -18,5 +18,13 @@ document.usesState = function(elem, state) {
 }
 
 document.buildVDom = function() {
-  
+  var DOM = {
+    root: document.createElement("div"),
+    innerHTML: "",
+    set innerHTML(n)
+    {
+       DOM.root.innerHTML = n;
+    }
+  };
+  return DOM;
 }
