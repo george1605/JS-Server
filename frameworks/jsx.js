@@ -24,6 +24,15 @@ var React = {
   }
 };
 
+React.Component = class {
+  constructor()
+  {
+    this.vtext = "";
+    this.props = {};
+    this.render = () => {};
+  }
+};
+
 var ReactDOM = {
   render(jsx, elem)
   { 
