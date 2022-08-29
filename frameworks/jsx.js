@@ -10,9 +10,23 @@ function parseJSX(element) {
     elem.setAttribute();
 } 
 
-var ReactRuntime = {
+var React = {
   useState: function(x) {
     x.internal = 0;
     return x;
+  },
+  createNode: function(name, props) {
+    var keys = Object.keys(props);
+    var elem = document.createElement(name);
+    for(var i = 0;i < keys.length;i++)
+       elem.setAttribute(keys[i], props[keys[i]]);
+    return elem;
   }
 };
+
+var ReactDOM = {
+  render(jsx, elem)
+  { 
+    elem.innerHTML = jsx;
+  }
+}
