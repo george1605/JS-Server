@@ -11,6 +11,11 @@ function monitor(server)
   });
 }
 
+function isWebSocket(req)
+{
+  return (req.headers['Sec-WebSocket-Key'] != undefined);
+}
+
 class RequestQueue 
 {
   constructor()
