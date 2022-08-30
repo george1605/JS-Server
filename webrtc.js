@@ -9,6 +9,12 @@ async function getAudioVideo()
   return stream;
 }
 
+function startWebRtc(config, localStream)
+{
+  var peer = new RTCPeerConnection(peerConnectionConfig);
+  peer.addStream(localStream);
+}
+
 function sendStream()
 {
 
