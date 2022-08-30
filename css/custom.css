@@ -18,3 +18,9 @@
   border-radius: 5%;
   box-shadow: 1px 1px rgb(0.1,0.2,0.1) blur;
 }
+
+.status-box {
+  color: white;
+  background-color: #abf59a;
+  font-size: 12px;
+}
