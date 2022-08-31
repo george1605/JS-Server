@@ -8,6 +8,8 @@ bindings for more languages.
 ```js
 var state = 0;
 var elem = document.newVElement("p");
+var button = document.newVElement("button");
+button.innerHTML = "Click Me!";
 button.onclick = function() {
   state++;
   document.formatVElement(elem, state);
