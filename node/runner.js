@@ -19,7 +19,7 @@ var server = {
   }
 };
 
-var file = process.argv[1] || "index.html";
+var file = process.argv[2] || "index.html";
 
 server.routes["/"] = (req, res) => {
   var x = "";
@@ -27,13 +27,12 @@ server.routes["/"] = (req, res) => {
   fs.readFile(file, 'utf8', (err, data) => {
     if (err)
       return;
-      data = data + "<script src='code.js'></script>";
+      data = data;
     });
     x = x + data;
   });
-  console.log(x);
   res.write(x);
 }
 
+console.log(`Server listening on port ${server.port}`);
 server.create();
-
